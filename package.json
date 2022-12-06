@@ -1,0 +1,17 @@
+{
+  "name": "dns-sinkhole",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./prod/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./prod/main.js",
+	"test": "node ./prod/main-test.js"
+  },
+  "author": "Pierre",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.10",
+    "typescript": "^4.9.3"
+  }
+}

@@ -1,1 +1,5 @@
-# dns-sinkhole
+# DNS sinkhole
+
+## TODO
+- [ ] Docker
+- [ ] improve structure

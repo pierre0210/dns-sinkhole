@@ -44,8 +44,7 @@ const QueryParser = (msg: Buffer): DnsQuery => {
 	const query: DnsQuery = {
 		Name: domain,
 		Type: ResourceRecord[msg.readUIntBE(index, 2)],
-		Class: msg.readUIntBE(index + 2, 2),
-		Size: index + 2 - 12 
+		Class: msg.readUIntBE(index + 2, 2)
 	};
 	console.log(query);
 	return query;

@@ -1,16 +1,18 @@
 import dgram from "dgram";
-import ErrorHandler from "./events/error";
-import DnsHandler from "./events/dns";
+import Error from "./events/error";
+import DnsHandler from "./modules/dnsHandler";
 import Listening from "./events/listening";
+import SocketExtension from "./interfaces/SocketExtension";
+import initialize from "./modules/initialize";
 
-const server = dgram.createSocket("udp4");
+const server = dgram.createSocket("udp4") as SocketExtension;
 
 server.on("message", (msg, rinfo) => {
-	DnsHandler(msg, rinfo, server);
+	DnsHandler(server, msg, rinfo);
 });
 
 server.on("listening", Listening);
 
-server.on("error", ErrorHandler);
+server.on("error", Error);
 
-server.bind(53, "127.0.0.1");
+initialize(server);

@@ -11,7 +11,9 @@ server.on("message", (msg, rinfo) => {
 	DnsHandler(server, msg, rinfo);
 });
 
-server.on("listening", Listening);
+server.on("listening", () => {
+	Listening(server);
+});
 
 server.on("error", Error);
 

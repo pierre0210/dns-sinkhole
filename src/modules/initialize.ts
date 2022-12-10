@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
-import https from "https";
+import { https } from "follow-redirects";
 import SocketExtension from "../interfaces/SocketExtension";
 import { EventEmitter } from "stream";
 
 const defaultConfig = {
-	BlackListURL: "https://raw.githubusercontent.com/HoshizoraProject/OpenData/main/domain/unsafelist.txt",
+	BlackListURL: "https://unsafelist.opendata-hoshizora.xyz/unsafelist.txt",
 	WhiteListURL: "https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt"
 }
 

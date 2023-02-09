@@ -1,10 +1,10 @@
 interface Flag {
-	QR: number;
+	QR: boolean;
 	OPCode: number;
-	AA: number;
-	TC: number;
-	RD: number;
-	RA: number;
+	AA: boolean;
+	TC: boolean;
+	RD: boolean;
+	RA: boolean;
 	RCode: number;
 };
 

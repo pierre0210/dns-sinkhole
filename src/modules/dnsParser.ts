@@ -5,12 +5,12 @@ import Flag from "../interfaces/Flag";
 
 const HeaderParser = (msg: Buffer): DnsHeader => {
 	const flag: Flag = {
-		QR: msg.readUintBE(2, 2) >> 15,
+		QR: Boolean(msg.readUintBE(2, 2) >> 15),
 		OPCode: (msg.readUintBE(2, 4) >> 11) & ((1 << 5) - 1),
-		AA: (msg.readUintBE(2, 2) >> 10) & 1,
-		TC: (msg.readUintBE(2, 2) >> 9) & 1,
-		RD: (msg.readUintBE(2, 2) >> 8) & 1,
-		RA: (msg.readUintBE(2, 2) >> 7) & 1,
+		AA: Boolean((msg.readUintBE(2, 2) >> 10) & 1),
+		TC: Boolean((msg.readUintBE(2, 2) >> 9) & 1),
+		RD: Boolean((msg.readUintBE(2, 2) >> 8) & 1),
+		RA: Boolean((msg.readUintBE(2, 2) >> 7) & 1),
 		RCode: msg.readUintBE(2, 2) & ((1 << 5) - 1)
 	};
 

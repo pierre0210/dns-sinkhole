@@ -22,7 +22,7 @@ const HeaderParser = (msg: Buffer): DnsHeader => {
 		AuthRRCount: msg.readUintBE(8, 2),
 		AddRRCount: msg.readUintBE(10, 2)
 	};
-	console.log(header);
+	//console.log(header);
 	return header;
 };
 

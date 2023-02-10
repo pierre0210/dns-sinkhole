@@ -1,6 +1,3 @@
-import ResourceRecord from "../enums/ResourceRecord";
-import DnsQuery from "../interfaces/DnsQuery";
-
 const DnsSinker = (msg: Buffer, rCode: number): Buffer => {
   const idBuff = Buffer.alloc(2);
   idBuff.writeUIntBE(msg.readUintBE(0, 2), 0, 2);

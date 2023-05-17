@@ -40,7 +40,7 @@ const initialize = (server: SocketExtension) => {
 		res.pipe(blackListStream);
 	});
 	ListSync.on("done", () => {
-		server.bind(53, "127.0.0.1");
+		server.bind(53);
 	});
 };
 
